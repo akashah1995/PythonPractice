@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='regform.css') }}">
+    </head>
+    <body>
+        <div id = "wrapper">
+                <h1> ASPCA: Registration Form</h1>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p id = 'flash'>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <form action = '/register' method = 'POST'>
+                    <p>First Name</p><input type = "text" name = 'firstname'>
+                    <p>Last Name</p><input type = "text" name = 'lastname'>
+                    <p>Email</p><input type = "text" name = 'email'>
+                    <p>Password</p><input type = "text" name = 'password'>
+                    <p>Confirm Password</p><input type = "text" name ='confirm'><br>
+                    <input type = "submit" value = 'Register' id = 'submit'>
+                </form>
+                <img src = '../static/ASPCA.png' width =400 id = 'dog'>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='dojosurvey.css') }}">
+    </head>
+    <body>
+        <div id = "wrapper">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <p id = 'flash'>{{message}}</p>
+                    {% endfor %}
+                 {% endif %}
+            {% endwith %}
+            <div id = "surveybox">
+                <form action = '/survey' method = 'post'>
+                    Your Name: <input type = "text" name = "your name"><br>
+                    Dojo Location: <select name = "location">
+                    <option value = "San Jose">San Jose</option>
+                    <option value = "San Francisco">San Francisco</option>
+                    <option value = "Seattle">Seattle</option>
+                    </select><br>
+                    Favorite Language: <select name = "language">
+                    <option value = "Python">Python</option>
+                    <option value = "Java">Java</option>
+                    <option value = "C++">C++</option>
+                    </select><br>
+                    Comments:<input type = "text" name = "comment"><br>
+                    <input type='submit' value='Submit'>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

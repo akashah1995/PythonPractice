@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ninjagold.css') }}">
+    </head>
+    <body>
+        <div id = "wrapper">
+            <div id = 'head'>
+                <p>Your Gold: <span id = 'gold'> {{session['totalgold']}} <span id = 'gold'></p>
+                <form action = '/reset' method = 'POST'>
+                    <input type = 'submit' value = 'restart game'>
+                </form>
+            </div>
+            <div class = "box">
+                <h1> Farm </h1>
+                <p> (earns 10-20 golds) </p>
+                <form action = '/farm' method = 'POST'>
+                    <input type = 'submit' value = 'Find Gold!'>
+                </form>
+            </div>
+            <div class = "box">
+                <h1> Cave </h1>
+                <p> (earns 5-10 golds) </p>
+                <form action = '/cave' method = 'POST'>
+                    <input type = 'submit' value = 'Find Gold!'>
+                </form>
+            </div>
+            <div class = "box">
+                <h1> House </h1>
+                <p> (earns 2-5 golds) </p>
+                <form action = '/house' method = 'POST'>
+                    <input type = 'submit' value = 'Find Gold!'>
+                </form>
+            </div>
+            <div class = "box">
+                <h1> Casino </h1>
+                <p> (gamble 0-50 golds) </p>
+                <form action = '/casino' method = 'POST'>
+                    <input type = 'submit' value = 'Find Gold!'>
+                </form>
+            </div>
+            <h3>Activities: </h3>
+            <div id = "container">
+                 <div class = "box2">
+                    {% for i in range(session['size']) %}
+                        {% if session['x'] > 0: %}
+                            <p id = "green" >{{session['activ'][i]}}</p>
+        
+                        {% else: %}
+                            <p id = "red" >{{session['activ'][i]}}</p>
+                        {% endif %}
+                    {% endfor %}
+                 </div>
+            </div>
+        </div>
+    </body>
+</html>

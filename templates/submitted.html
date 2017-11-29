@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='regform.css') }}">
+    </head>
+    <body>
+        <div id = "wrapper">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p id = 'flash'>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <h3>First Name: {{session['firstname']}}</h3>
+                <h3>Last Name: {{session['lastname']}}</h3>
+                <h3>Email: {{session['email']}}</h3>
+                <h3>Password: {{session['password']}}</h3>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+*{
+ margin: 0px;
+ padding: 0px;
+}
+
+#wrapper{
+width:900px;
+height:900px;
+background-color:lightblue;
+}
+
+#head {
+margin-left: 10px;
+}
+
+.box{
+margin-top: 20px;
+width: 150px;
+height: 150px;
+display:inline-block;
+margin-left:20px;
+border-style:solid;
+text-align:center;
+}
+
+.box h1{
+margin-top:15px;
+}
+
+h3{
+margin-top:20px;
+margin-left:15px;
+}
+
+#container{
+margin-left: 15px;
+width: 800px;
+height: 100px;
+overflow: scroll;
+}
+
+#green{
+color: green;
+}
+
+#red{
+color:red;
+}
+
+.box2{
+width:407px;
+height: 100px auto;
+}
+
+
+
